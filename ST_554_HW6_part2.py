@@ -57,3 +57,16 @@ class SLR_slope_simulator:
             if value <= self.x.median():
                 prob = (self.slopes[:,1] < value)
                 return 2*prob.mean()
+                
+####################################################
+# Using my newly made class
+
+# variable assignments
+beta_0 = 12
+beta_1 = 2
+x = np.array(list(np.linspace(start= 0, stop = 10, num = 11))*3)
+sigma = 1
+seed = 10
+num_sims = 1000
+
+plot_sampling_distribution()
