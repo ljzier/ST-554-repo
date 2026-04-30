@@ -21,6 +21,6 @@ for i in range(20):
     
     print(f"BATCH {i} WRITTEN")
     
-    # pause 10 seconds
-    time.sleep(10)
+    # pause 20 seconds
+    time.sleep(20)
     
