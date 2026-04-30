@@ -7,23 +7,20 @@
 
 import pandas as pd
 import time
-import os
 
 # read in the data file we'll use to mimic streaming data
 streamFile = pd.read_csv("data/power_streaming_data.csv")
 
 # loop 20 times
-for i in range(10): 
+for i in range(20): 
     # sample 5 rows
     sample = streamFile.sample(n=5)
     
     # write to the streaming data folder
-    sample.to_csv(f"streaming_data/batch_{i}.csv", index = False)
+    sample.to_csv(f"streaming_data/batch_{i:02d}.csv", index = False)
     
     print(f"BATCH {i} WRITTEN")
     
     # pause 10 seconds
     time.sleep(10)
     
-for s in spark.streams.active:
-    s.stop()
